@@ -1,15 +1,11 @@
 def SieveOfEratosthenes(n, isPrime):
-    # Initialize all entries of boolean array
-    # as true. A value in isPrime[i] will finally
-    # be false if i is Not a prime, else true
-    # bool isPrime[n+1]
+  
     isPrime[0] = isPrime[1] = False
     for i in range(2,n+1):
         isPrime[i] = True
   
     for p in range(2,n+1):
-        # If isPrime[p] is not changed, then it is
-        # a prime
+        
         if (p*p<=n and isPrime[p] == True):
             # Update all multiples of p
             for i in range(p*2,n+1,p):
@@ -17,7 +13,6 @@ def SieveOfEratosthenes(n, isPrime):
                 p += 1
 def superPrimes(n):
      
-    # Generating primes using Sieve
     isPrime = [1 for i in range(n+1)]
     SieveOfEratosthenes(n, isPrime)
   
